@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(){
+let n=t.value;
+if(n > 0){
+    l.innerHTML="Positive Number";
+    l.style.color="pink";
+            l.style.background="green";
+}
+        else{
+            l.innerHTML="Negative Number";
+            l.style.color="blue";
+            l.style.background="yellow";
+        }
+    }
+    </script>
+</head>
+<body>
+    <p><input type="text" id="t" /></p>
+    <button onclick="fun()">Submit</button>
+    <p><label id="l"></label></p>
+</body>
+</html>
