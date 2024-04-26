@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+let l=t1.value
+let b=t2.value
+if(l===b){
+lbl.innerHTML="It is Square"
+}
+else{
+lbl.innerHTML="It is Rectangle"
+}
+        }
+    </script>
+</head>
+<body>
+    <h1>length & breath of a rectangle from user & check square or not</h1>
+    <p><input type="text" id="t1" placeholder="Enter length"></p>
+    <p><input type="text" id="t2" placeholder="Enter breath"></p>
+    <button onclick="f1()">Submit</button>
+    <p><label id="lbl"></label></p>
+</body>
+</html>

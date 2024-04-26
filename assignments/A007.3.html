@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f(){
+            let a=parseInt(t1.value);
+            let b=parseInt(t2.value);
+            let c=parseInt(t3.value);
+            if (a>b && a>c){
+                lbl.innerHTML=`${a} is greater`;
+            }
+            else if (b>a && b>c){
+                lbl.innerHTML=`${b} is greater `;
+            }
+            else{
+                lbl.innerHTML=`${c} is greater`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Accept 3 numbers and print the greatest number</h1>
+    <p><input type="number" placeholder="Enter 1st num" id="t1"></p>
+    <p><input type="number"  placeholder="Enter 2nd num" id="t2"></p>
+    <p><input type="number" placeholder="Enter 3rd num" id="t3"></p>
+    <button onclick="f()">Submit</button>
+    <p><label id="lbl"></label></p>
+</body>
+</html>
