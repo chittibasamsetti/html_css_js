@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function calc(){
-return a+b;
+       let add=(a,b)=>{
+        return a+b;
+       }
+       let sub=(a,b)=>{
+            return a-b;
         }
-res=calc(3,4);
-document.write(res)
+       let mul=(a,b)=>{
+            return a*b;
+        }
+        let div=(a,b)=>{
+            return a/b;
+        }
+        res=add(4,4);
+        document.write(res);
+        res=sub(4,4);
+        document.write(res);
+        res=mul(4,4);
+        document.write(res);
+        res=div(4,4);
+        document.write(res);
+        
+
     </script>
 </head>
 <body>

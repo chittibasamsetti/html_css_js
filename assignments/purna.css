@@ -1,0 +1,18 @@
+.bg-container{
+    margin:100px;
+    text-align:center;
+}
+.buttom-cust{
+    width:190px;
+}
+input{
+    width:300px;
+    
+}
+.card-container{
+    background-color:white;
+    border-radius: 10px;
+    width:500px;
+    padding-bottom:20px;
+    padding-top:20px;
+}
