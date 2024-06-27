@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .randomNums{
+      background-color: aqua;
+      width:200px;
+      height:60px;
+      font-size: 40px;
+      padding-left:80px;
+      padding-top: 10px;
+      border-radius: 5px;
+      border:5px solid black;
+      margin-top:30px;
+} 
+.hidden{
+    display:none;
+}
+.quest{
+    font-size: 40px;
+    font-family: verdana; 
+    margin-left:420px;
+}
+.flex{
+    display:flex;
+}
+.flex1{
+    display:flex;
+    margin-left: 30px;
+}
+.answer{
+    background-color: aqua;
+      width:200px;
+      height:60px;
+      font-size: 35px;
+      padding-left:80px;
+      padding-top: 10px;
+      border-radius: 5px;
+      border:5px solid black;
+      margin-top:30px;
+}
+
+.submit{
+    background-color:rgb(208, 145, 155);
+      width:200px;
+      height:60px;
+      font-size: 30px;
+      /* padding-left:80px; */
+      padding-top: 10px;
+      border-radius: 5px;
+      border:5px solid black;
+      margin-top:30px;
+      /* margin-left:580px; */
+}
+.score{
+   
+      font-size: 50px;
+     font-family: verdana;
+      padding-top: 10px;
+      border-radius: 5px;
+      margin-top:30px;
+      margin-left:465px;
+      
+}
+.flex2{
+    display:flex;
+    /* justify-content: space-around; */
+    align-items: top;
+}
+.score1{
+    font-size: 50px;
+     font-family: verdana;
+      padding-top: 10px;
+      border-radius: 5px;
+      margin-top:30px;
+     
+}
+.msg{
+    font-size: 40px;
+    font-family: verdana;
+    margin-left: 480px;
+    margin-top: 40px;
+}
+.flex4{
+    display:flex;
+    margin-left:420px;
+}
+    </style>
+    
+</head>
+<body>
+    <h1>Basic Level:</h1>
+    <div class="flex2">
+        <div for="" class="score">Score:</div>
+        <div class="score1 js-score" id="address">0</div>
+    </div>
+    <div class="flex">
+        <p class="quest">Question :</p>
+        <label for="" id="display" class="randomNums"></label>
+    </div>
+    <div class="flex1">
+        <p class="quest">Answer :</p>
+        <input type="number" class="answer" placeholder="type.. " id="ans">
+    </div>
+    <div class="flex4">
+        <button class='submit' onclick="f()">Submit</button>
+        <button class="submit" style="margin-left: 100px;" onclick="next()">Next</button>
+    </div>
+    <div id="result" class="msg"></div>
+    
+    <script>
+        const operators=[{sym:'+',sym:'-',sym:'*',sym:'/'}];
+        let correctAns;
+        random(); 
+      function random(){
+        let randomNum1=Math.random()*100
+        round1=Math.round(randomNum1)
+        let randomNum2=Math.random()*100
+        round2=Math.round(randomNum2)
+        display.innerHTML=`${round1}+${round2}=?`
+        correctAns = Math.round(randomNum1)+(Math.round(randomNum2));
+      }
+    
+       function next(){
+        result.classList.add('hidden');
+        random(); 
+        document.querySelector('#ans').value='';
+       }
+
+
+
+        
+        function f(){
+        let ans=parseInt(document.querySelector('#ans').value);
+        let result=document.querySelector('#result');
+        result.classList.remove('hidden');
+        let address=document.querySelector('#address')
+        let score=parseInt(document.querySelector('.js-score').innerHTML);
+        
+       console.log(correctAns)
+       if(ans === correctAns){
+       result.innerHTML=`${ans}, You are Correct `;
+       address.innerHTML=`${score+=1}`;
+       }
+       else{
+        result.innerHTML=` ${ans}, You are wrong`;
+       }
+      
+    //   document.querySelector('#ans').value='';
+      
+    }
+    
+     
+    </script>
+</body>
+</html>

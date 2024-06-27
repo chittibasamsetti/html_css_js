@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" placeholder="enter l" id="l">
+    <input type="number" placeholder="enter b" id="b">
+    <input type="number" placeholder="enter c" id="c">
+    <button onclick="f()">Submit</button>
+    <label for="" id="lbl"></label>
+    ///////////////////////////////
+    <input type="number" placeholder='enter num' id="num">
+    <button onclick="fun()">submit</button>
+    <label for="" id="lbl"></label>
+    <script>
+       function f(){
+       let a=(document.querySelector('#l').value);
+       let b=(document.querySelector('#b').value);
+       let c=(document.querySelector('#c').value);
+       let lbl=document.querySelector('#lbl');
+      if(a>b && a>c){
+        lbl.innerHTML='a is greater';
+      }
+     else if(a<b && b>c){
+        lbl.innerHTML='b is greater';
+      }
+       else{
+        lbl.innerHTML='c is greater';
+      }
+      document.querySelector('#l').value=''
+      document.querySelector('#b').value=''
+     document.querySelector('#c').value=''
+    }
+    ////////////////////////////////////////
+    let series=''
+    for(let i=5;i<=25;i++){
+        series+=i;
+        if(i<25){
+            series+=','
+        }
+    }
+    console.log(series)
+    sum=''
+    for(let i=1;i<=26;i+=5){
+       sum+=i;
+       if(i<=25){
+        sum+=','
+       }
+    }
+    console.log(sum)
+    ////////////////////
+    function add(a,b){
+      return a+b;
+    }
+    function sub(a,b){
+      return a-b;
+    }
+    function mul(a,b){
+      return a*b;
+    }
+    function div(a,b){
+      return a/b;
+    }
+    console.log(add(2,3));
+    console.log(sub(2,3));
+    console.log(mul(2,3));
+    console.log(div(2,3));
+    ///////////////////////////
+ function fun(){
+       let num = document.querySelector('#num').value;
+       let lbl = document.querySelector('#lbl');
+      if(num%5 === 0){
+        lbl.innerHTML="yes,it is divisible";
+      }
+      else{
+        lbl.innerHTML="dengeyy";
+      }
+    }
+
+
+
+    </script>
+</body>
+</html>

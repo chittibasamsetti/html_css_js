@@ -1,0 +1,129 @@
+body{
+    background-color:rgb(196, 203, 200);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.bigbox{
+    width:1090px;
+    height:2000px;
+    /* border:1px solid black; */
+    margin:auto;
+    background-color: white;;
+}
+.box1{
+    width:1090px;
+    height:115px;
+    margin:auto;
+    border:none;
+   margin-left: 0px;
+   position:relative;
+   margin-top:10px;
+}
+.me{
+    position:absolute;
+    top:17px;
+    right:130px;
+}
+.flex1{
+    display:flex;
+    justify-content: space-between;
+    color:rgb(129, 129, 230);
+    background-color: skyblue;
+    height:25px;
+    align-items: center;
+    margin-top:18px;
+    font-family: verdana;
+    font-size: 13px;
+    margin-left: 10px;
+    margin-right:10px;
+
+}
+.div1{
+    width:160px;
+    height:500px;
+    /* border:1px solid black; */
+    margin-left:15px;
+    margin-right: 5px;
+
+}
+.div2{
+    width:890px;
+    height:500px;
+    /* border:1px solid black; */
+
+
+}
+.boxflex{
+    display:flex;
+    margin-top:20px;
+}
+.menu{
+    background-color:rgb(135, 135, 210);
+    color:white;
+    height:35px;
+    display:flex;
+    align-items: center;
+    font-family: verdana;
+    font-size: 10px;
+    font-weight: bold;
+    padding-left:60px;
+   
+}
+
+.color{
+    background-color: rgb(217, 235, 240);
+    margin-top:-15px;
+
+}
+.color p{
+color:  rgb(67, 67, 135);
+height:15px;
+font-family: verdana;
+font-size: 10px;
+font-weight: bold;
+padding-left: 20px;
+padding-top: 10px;
+}
+.student{
+    color:rgb(135, 135, 210);
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 5px;
+    
+}
+.innerbox{
+    width:870px;
+    height:160px;
+    border:1px solid  rgb(180, 208, 217);;
+    margin:auto;
+    margin-top: 20px;
+}
+.innerbox div{
+    color:rgb(67, 67, 135);
+    padding:5px;
+    background-color: rgb(217, 235, 240);
+    font-family: verdana;
+    font-size: 10px;
+    font-weight: bold;
+    border:1px solid white;
+    border-radius: 5px;;
+}
+.print{
+    background-color:  rgb(42, 184, 232);
+    color:white;
+    border:none;
+    height:30px;
+    border-radius: 5px;
+    margin-left:10px;
+    margin-right: 5px;
+}
+.export{
+    background-color: rgb(42, 184, 232);
+    color:white;
+    border:none;
+    height:30px;
+    border-radius: 5px;
+    margin-right: 5px
+}

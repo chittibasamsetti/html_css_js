@@ -22,3 +22,10 @@ document.getElementById("submit").addEventListener("click",function(){
         alert("incorrect email or password");
       }
     })
+    function add(a,b){
+       return a+b
+    }
+    function sub(a,b){
+      return a-b
+   }
+   export{add,sub}

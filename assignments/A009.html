@@ -3,153 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook Clone</title>
-    <link rel="stylesheet" href="style.css"/>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
-        }
-
-        .container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        .flex1 {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .s1 {
-            font-size: 50px;
-            color: #1877f2;
-        }
-
-        .s2, .signup-form {
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .s2 {
-            width: 300px;
-            margin-left: 50px;
-        }
-
-        .box input, .box button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .c1, .c2, .t3 {
-            background-color: #1877f2;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 5;
-        }
-
-        .opacity-reduced {
-            opacity: 0.5;
-        }
-
-        .signup-form {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            display: none;
-        }
-    </style>
+    <title>Facebook-login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="A009.css">
 </head>
 <body>
-    <div class="container">
-        <div class="flex1" id="login-section">
-            <div>
-                <h1 class="s1">facebook</h1>
-                <p style="font-size: 30px;">Facebook helps you connect and share with the people in your life</p>
-            </div>
-            <div class="s2">
-                <form>
-                    <div class="box">
-                        <input type="text" placeholder="Enter Email/number" id="d"><br><br>
-                        <input type="password" placeholder="Password" id="d"><br><br>
-                    </div>
-                    <button id="d" class="c1">Log in</button><br><br>
-                    <p style="margin:10%;"><a href="#">Forgotten password</a></p>
-                    <button type="button" id="create-account-btn" class="c2" style="width:205px;height:20px">Create new account</button>
-                </form>
-            </div>
+<div class="total-flex">
+    <div class="content js-content">
+      <div class="flex">
+        <div class="txt">
+            <p class="facebook">facebook</p> <br>
+            <p class="inner-txt">Facebook helps you connect and share with the people in your life.</p>
         </div>
-        <div class="overlay" id="overlay"></div>
-        <div class="signup-form" id="signup-form">
+      </div>
+        <div class="login">
+            <div class="inner-box">
+                <p id="address"></p>
+                <input type="text" placeholder="Enter Email" class="email1" id="regEmail"> <br>
+                <input type="password" placeholder="Enter Password" class="email1" id="regPass"> <br>
+                <button class="loginbutton" onclick="login()">Log in</button> <br>
+                <a href="" style="margin-left: 60px; font-family: verdana; font-size: 12px;">Forgotten password?</a> <br>
+                <hr style="margin-top: 20px;">
+                <button class="create-button js-create-button">Create new account</button>
 
-            <form>
-                <h1>Sign up</h1>
-                <p>It's quick and easy</p>
-                <hr>
-                <input type="text" placeholder="First name" style="width: 300px;height:20px"><br><br>
-                <input type="text" placeholder="Surname" style="width: 300px;height:20px"><br><br>
-                <input type="text" placeholder="Email/number"  style="width: 300px;height:20px"><br><br>
-                <input type="password" placeholder="Password"  style="width: 300px;height:20px"><br><br>
-                <p>Date of Birth</p>
-                <select class="t1">
-                    <!-- Options for day -->
-                </select>
-                <select class="t1">
-                    <!-- Options for month -->
-                </select>
-                <select class="t1">
-                    <!-- Options for year -->
-                </select>
-                <br><br>
-                <p>Gender</p>
-                <input type="radio" name="gender" class="t2"> Female
-                <input type="radio" name="gender" class="t2"> Male
-                <input type="radio" name="gender" class="t2"> Custom <br><br>
-            </form>
+            </div>
+           
+            <p style="font-size: 10px; font-family:verdana;margin-top: 50px;margin-left: 20px;"><strong>Create a Page</strong> for a celebrity, brand or business.</p>
+       
         </div>
     </div>
+        <div class="create-account hidden js-create-account">
+            <p class="Sign-Up">Sign Up</p> 
+            <div class="x" id="x"><i class="fa-sharp fa-solid fa-xmark"></i></div>
+          <br>
+            <p class="quick">It's quick and easy.</p> <br>
+            <hr>
+            <div class="signup-inner-box">
+               <input type="text" placeholder="Mobile number or email address" class="email" id="email"> <br>
+               <input type="password" placeholder="New Password" class="password" id="password"> <br>
+               <p style="font-size: 13px;font-family: verdana;color:gray; margin-bottom:-15px;">Date of birth</p> <br>
+               <div class="select-flex">
+                 <select >
+                    <option value="">19</option>
+                 </select>
+                 <select>
+                    <option value="">Jan</option>
+                 </select>
+                 <select>
+                    <option value="">2024</option>
+                 </select>
+               </div>
+               <div class="name">
+                 <input type="text" placeholder="First name" style=" border-radius: 5px;" id="name">
+                 <input type="text" placeholder="Surname" style=" border-radius: 5px;">
+
+               </div>
+               <p style="font-size: 13px;font-family: verdana; margin-bottom:-15px;">gender</p>
+               <div class="radio-flex">
+                <input type="radio" name="gender">Female
+                <input type="radio" name="gender">Male
+                <input type="radio" name="gender">Custom
+               </div>
+               <p style="font-size: 10px;font-family: verdana; margin-bottom:-15px;">People who use our service may have uploaded your contact information to Facebook. Learn more.</p>
+               <p style="font-size: 10px;font-family: verdana; margin-top:30px;">By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+            </div>
+            <button class="signup-button" onclick="fun()">Sign Up</button>
+
+        </div>
+</div>
+
+   <script>
+    const arr=[];
+     let createButton=document.querySelector('.js-create-button');
+     let createAccount=document.querySelector('.js-create-account');
+     let content=document.querySelector('.js-content');
+     createButton.addEventListener('click',()=>{
+        createAccount.classList.remove('hidden');
+        createAccount.classList.add('after');
+        content.classList.add("opacity-reduced");
+    //  .classList.add('opasity');
     
-    <script>
-        const create = document.getElementById("create-account-btn");
-        const content = document.getElementById("login-section");
-        const signup = document.getElementById("signup-form");
-        const overlay = document.getElementById("overlay");
+    })
+    let x=document.querySelector('#x');
+    x.addEventListener('click',()=>{
+        createAccount.classList.add('hidden');
+        content.classList.remove("opacity-reduced");
+    })
+    function fun(){
+      let email=document.querySelector('#email');
+    let password=document.querySelector('#password');
+    let name=document.querySelector('#name');
+    let obj={};
+    obj.email=email.value;
+    obj.password=password.value;
+    obj.name=name.value
+    arr.push(obj)
+    }
+   function login(){
+    let regEmail=document.querySelector('#regEmail').value;
+    let regPass=document.querySelector('#regPass').value;
+    let address=document.querySelector('#address');
+    let found=arr.find((obj)=>{
+      return regEmail === obj.email && regPass === obj.password;
+    })
+    if(found){
+      let n=found.name;
+      address.innerHTML=`Hello ${n}`;
+    }
+    else{
+      address.innerHTML="Access Denied";
+    }
+   }
+    
 
-        create.addEventListener("click", function(){
-            content.classList.add("opacity-reduced"); // Reduce opacity of login section
-            signup.style.display = "block"; // Show signup form
-            overlay.style.display = "block"; // Show overlay
-        });
 
-        overlay.addEventListener("click", function(){
-            content.classList.remove("opacity-reduced"); // Restore opacity of login section
-            signup.style.display = "none"; // Hide signup form
-            overlay.style.display = "none"; // Hide overlay
-        });
-    </script>
+
+   </script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
+    <script>
+         function f2(){
+            let email=document.getElementById("regemail").value 
+            let pass=document.getElementById("regpass").value 
+            let found=users.find((value)=>{
+              return value.Email===email && value.password===pass
+            })
+            if(found){
+                let n=found.name
+                lbl.innerHTML=`Welcome ${n}`
+            }
+            else{
+                lbl.innerHTML="Sorry Boss"
+            }
+        }
+          const users=[]  
+        function f1(){
+           
+          let txt=document.getElementById("txt").value 
+          let email=document.getElementById("email").value 
+          let pass=document.getElementById("pass").value
+          let obj={}
+          obj.name=txt
+          obj.Email=email
+          obj.password=pass
+          users.push(obj)
+          console.log(users)
+        }
+        function f(){
+            let hide=document.getElementById("hide")
+            hide.classList.remove("hidden")
+            
+        }
+        function ff(){
+            let back=document.getElementById("back")
+            back.classList.add("hidden")
+        }
+        
+    </script>
+</head>
+<body>
+    
+        <h1>login</h1>
+        <label id="lbl"></label> <br><br>
+        <input type="email" placeholder="email" id="regemail"> <br><br>
+        <input type="password" placeholder="password" id="regpass"> <br><br>
+        <button onclick="f2()">log in</button><br><br>  
+        <button onclick="f()">Create New Account</button>
+    
+    
+    <hr>
+    <div id="back">
+    <div id="hide" class="hidden">
+        <h1>Register</h1>
+        <input type="text" placeholder="username" id="txt"> <br><br>
+        <input type="email" placeholder="email" id="email"> <br><br> 
+        <input type="password" placeholder="password" id="pass"> <br><br>
+        <button onclick="f1()">register</button> <br><br>
+        <p>Already a member</p>
+        <button onclick="ff()">login</button>
+    </div>
+</div>
+    
+    
+</body>
+</html>   

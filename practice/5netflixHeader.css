@@ -1,0 +1,115 @@
+body{
+   
+    margin:0px;
+    background-color: rgb(31, 30, 30);
+}
+header{
+    background-image:  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("../images/pic4.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    width:1338px;
+    height:675px;
+    margin-bottom:5px;
+   
+
+} 
+.img1 img{
+     width:130px;
+    height:140px;
+    margin-top:-40px;
+ } 
+.headerflex1{
+    display:flex;
+    /* border:1px solid white; */
+    width:1000px;
+    height:120px;
+    margin:auto;
+    /* justify-content: space-between; */
+    text-align: top;
+    padding-top: 30px;
+}
+.lanSign{
+    display:flex;
+    margin-left: 600px;
+}
+.language{
+    height:30px;
+    width:140px;
+    border-radius: 5px;
+    background-color: transparent;
+    color:white;
+    font-size:15px;
+    padding-left:40px;
+    position:relative;
+}
+.signup{
+    height:30px;
+    width:100px;
+    border-radius: 5px;
+    background-color: rgb(224, 49, 49);
+    border:none;
+    margin-left:20px;
+}
+.icon1{
+    position:absolute;
+    top:38px;
+    right:410px;
+    font-size: 15px;
+    color:antiquewhite
+   
+}
+.emailflex{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 0px;
+
+}
+.txt{
+   
+    width:800px;
+    height:210px;
+    margin-top:230px;
+    color:white;
+    /* border:1px solid white; */
+    margin-left:-880px;
+    text-align: center;
+}
+.txt1{
+    font-size: 37px;
+    font-family: Verdana;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.txt2{
+    font-size: 20px;
+    font-family: Verdana;
+    margin-bottom: 20px;
+}
+.txt3{
+    font-size: 15px;
+    font-family: Verdana;
+    margin-bottom: 20px;
+}
+.email{
+    height:50px;
+    width:330px;
+    margin-right: 10px;
+    background-color: transparent;
+    color:white;
+    border:1px solid white;
+    font-size: 15px;
+    box-shadow: inset 100px 100px 20px rgba(0,0,0,0.7);
+    border-radius: 5px;
+}
+
+.getstarted{
+    height:55px;
+    width:150px;
+    background-color: rgb(219, 22, 22);
+    color:white;
+    border-radius: 5px;
+    border:none;
+    font-size: 20px;
+    font-weight: 300;
+
+}
