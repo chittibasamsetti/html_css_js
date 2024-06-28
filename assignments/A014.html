@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            font-family: verdana;
+        }
+        .veg{
+            width:200px;
+            height:250px;
+            background-color: rgb(184, 117, 128);
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-family: verdana;
+            padding-left: 0px;
+        }
+        .content{
+            display:flex;
+            justify-content: center;
+        }
+        .item{
+            width:350px;
+            height:250px;
+        }
+        div img{
+            width:150px;
+            height:150px;
+            margin-left: 100px;
+            margin-top: 50px;
+        }
+        .name{
+            font-size: 20px;
+            font-weight: bold;
+            font-family: verdana;
+            padding-left: 130px;
+        }
+        .rules{
+            width:500px;
+            height:220px;
+            background-color:rgb(248, 223, 223) ;
+            margin:auto;
+            padding-left: 90px;
+        }
+        .score{
+            margin-left: 580px;
+            color:rgb(28, 28, 224)
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin-left:200px;">Use both mouse & ArrowLeft,ArrowRight on keyboard</h1>
+    <div class="container">
+        <h1 class="score">score :<span id="count">0</span></h1>
+        <div class="content">
+            <div class="veg" onclick="both(0)"> Fruits</div>
+            <div class="item" id="print">
+
+            </div>
+            <div class="veg" onclick="both(1)">Vegetables
+            </div>
+           
+            
+        </div>
+
+    </div>
+    <div class="rules">
+        <h3>Rules:</h3>
+        <h3>click Fruits box to see a fruit</h3>
+        <h3>click ArrowLeft to see a fruit</h3>
+        <h3>click Vegetables box to see a Vegetable</h3>
+        <h3>click ArrowRight to see a Vegetable</h3>
+    </div>
+    
+    <script>
+        const all=[
+            {id:1,image:'apple.png',name:'apple',cid:0},
+            {id:2,image:'beans.jpg',name:'beans',cid:1},
+            {id:3,image:'cabbage.png',name:'cabbage',cid:1},
+            {id:4,image:'carrot.jpg',name:'carrot',cid:1},
+            {id:5,image:'orange.png',name:'orange',cid:0},
+            {id:6,image:'tomato.png',name:'tomato',cid:1},
+            {id:7,image:'apple.png',name:'apple',cid:0},
+            {id:8,image:'orange.png',name:'orange',cid:0}
+        ];
+        let score=0;
+        d=document.body
+        d.onkeydown=(e)=>{ 
+            console.log(e.key)
+            if(e.key === 'ArrowLeft' && 0 === computer){
+                 score++
+             }
+             else if(e.key === 'ArrowRight' && 1 === computer){
+                score++
+             }
+             generate()
+         document.querySelector('#count').innerHTML=score;
+
+        }
+        function both(you){
+            if(you === computer){
+                score++
+            }
+            generate()
+            document.querySelector('#count').innerHTML=score;
+        }
+
+
+
+
+        function generate(){
+            let index=0;
+            index=Math.round(Math.random()*all.length)
+            all[index].cid
+            html='';
+            html+=`
+             <div class="item" id="print">
+                <img src="../images/${all[index].image}" alt="${all[index].name}">
+                <p class="name">${all[index].name}</p>
+            </div>
+            `;
+            document.querySelector('#print').innerHTML=html
+            computer=all[index].cid
+        }
+       
+        generate()
+    </script>
+</body>
+</html>

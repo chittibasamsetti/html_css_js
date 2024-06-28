@@ -31,6 +31,7 @@ function generateProductsHtml() {
 function cartTransition() {
     document.querySelector('#move').classList.add('after');
     document.querySelector('.bigbox').classList.add('js-bigbox');
+    document.querySelector('#hidden').classList.add('hidden');
 }
      
 function addToCart(key) {
@@ -38,23 +39,10 @@ function addToCart(key) {
     if (!cartList[key]) {
         cartList[key] = { ...products[key], quantity: 1 };
         cartCount++;
-        
-
-        // if (quantity <= 0) {
-        //     delete cartList[key];
-        //  } 
-        // else {
-        //     cartList[key].quantity = quantity;
-            
-        // }
-
-
-
         document.querySelector('.cartQ').innerHTML=cartCount;
     } else {
           cartList[key].quantity++;
     }
-    
      reloadCart();
 }
 
@@ -67,24 +55,22 @@ function reloadCart() {
             cartListHtml += `
              <div class="cart-flex">
                 <div class="cart-flex1">
-                    <img src="../images/${product.image}" style="width:50px;height:50px;">
-                    <p style="margin-top:10px;font-size:15px;">${product.name}</p>
+                    <img src="../images/${product.image}" style="width:70px;height:70px;">
+                    <p style="font-size:20px;">${product.name}</p>
                 </div>
-                <span style="font-size:15px;margin-top:-10px;margin-left:-350px;margin-right:50px">${product.price * product.quantity}</span>
+                <span style="font-size:20px;margin-left:-330px;margin-right:50px">${product.price * product.quantity}</span>
                 <div class="cart-flex1">
-                    <button style="height: 15px;margin-top:10px;padding-left:3px;padding-right:3px;padding-bottom:15px; " onclick="changeQuantity(${index}, ${product.quantity - 1})">-</button>
-                    <p style="margin-top: 10px; font-size:15px;">${product.quantity}</p>
-                    <button style="height: 15px; margin-top: 10px; padding-bottom:15px; padding:0px; ;padding-left:2px;padding-right:2px; padding-bottom:15px;" onclick="changeQuantity(${index}, ${product.quantity + 1})">+</button>  
+                    <button style="height: 15px;margin-top:22px;padding-left:3px;padding-right:3px;padding-bottom:15px; " onclick="changeQuantity(${index}, ${product.quantity - 1})">-</button>
+                    <p style=" font-size:20px;">${product.quantity}</p>
+                    <button style="height: 15px; padding-bottom:15px; padding:0px; ;padding-left:2px;padding-right:2px; padding-bottom:15px;margin-top:22px" onclick="changeQuantity(${index}, ${product.quantity + 1})">+</button>  
                 </div>
             </div>
-            <div class="flex">
-            <p class="total">${(total+=product.price * product.quantity)}</p>
-            <p class="close" onclick="removeTransition()">close</p>
-        </div>
             `;
+            total+=product.price * product.quantity;
         }
-    });
+    });  
     document.querySelector('#cartList').innerHTML = cartListHtml;
+    document.querySelector('#total').innerHTML =`${total}`
 }
 
 function changeQuantity(key, quantity) {
@@ -94,7 +80,6 @@ function changeQuantity(key, quantity) {
      } 
     else {
         cartList[key].quantity = quantity;
-        
     }
     document.querySelector('.cartQ').innerHTML = cartCount;
          reloadCart();
@@ -103,11 +88,8 @@ function changeQuantity(key, quantity) {
 function removeTransition() {
     document.querySelector('#move').classList.remove('after');
     document.querySelector('.bigbox').classList.remove('js-bigbox');
+    document.querySelector('#hidden').classList.remove('hidden');
 }
 
-//  function Count(){
-//     document.querySelector('.cartQ').innerHTML=cartCount;
-//  }
 
-// Initialize the app
 generateProductsHtml();
