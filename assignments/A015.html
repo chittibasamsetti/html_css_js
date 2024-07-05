@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id='userList'></ol>
+    <script>
+    //const userList=document.querySelector('#userList')
+    const url="https://jsonplaceholder.typicode.com/users"
+   const promises=()=>{
+    return new Promise((resolve,reject)=>{
+    resolve()
+    reject('sorry mann')
+    
+    })
+   }
+   const response=()=>{
+    return fetch(url)
+   }
+   const data=(response)=>{
+   return response.json()
+   }
+   const print=(data)=>{
+    data.map((product)=>{
+        let li=document.createElement('li');
+        li.innerHTML=product.name;
+        userList.append(li);
+        })
+   }
+   promises()
+   .then(()=>response())
+   .then((a)=>data(a))
+   .then((x)=>print(x))
+   .catch((e)=>{
+    let li=document.createElement('li');
+        li.innerHTML="sorry mann";
+        userList.append(li);
+   })
+   
+
+
+    // const f= async()=>{
+    //     try{
+    //         let response=await fetch(url);
+    //         let data=await response.json();
+    //         data.map((product)=>{
+    //             let li=document.createElement('li');
+    //             li.innerHTML=product.name;
+    //             //print.append(li)
+    //             userList.append(li);
+    //         })
+            
+    //         }
+    //     catch(e){
+    //         console.log(e);
+    //     }
+    // }
+    // f()
+
+
+    //     const f1=()=>{
+    //         return new Promise((resolve,reject)=>{
+    //             setTimeout(()=>{
+    //                 let tru=true;
+    //                 if(tru) resolve();
+    //                 else reject('rejected mann')
+    //             },5000)
+    //         })
+    //     }
+    //     const f2=()=>{
+    //         console.log('fun f2')
+    //     }
+    //    const f3= async()=>{
+    //     try{
+    //    await f1()
+    //    f2()
+    //    }
+    //    catch(e){
+    //     console.log(e)
+    //    }
+    // }
+    // f3()
+        // f1()
+        // .then(()=>f2())
+        // .catch((e)=>console.log(e))
+    </script>
+</body>
+</html>
